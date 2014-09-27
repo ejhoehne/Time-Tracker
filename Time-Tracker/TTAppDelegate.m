@@ -7,12 +7,19 @@
 //
 
 #import "TTAppDelegate.h"
+#import "EJHListViewController.h"
 
 @implementation TTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    EJHListViewController *listViewController = [EJHListViewController new];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listViewController];
+    self.window.rootViewController = navController;
+    
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

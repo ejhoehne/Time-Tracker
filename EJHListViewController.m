@@ -7,8 +7,11 @@
 //
 
 #import "EJHListViewController.h"
+#import "EJHListTableViewDataSource.h"
 
 @interface EJHListViewController ()
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) EJHListTableViewDataSource *dataSource;
 
 @end
 
@@ -17,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.dataSource = [EJHListTableViewDataSource new];
+    self.tableView = [UITableView new];
+    self.tableView.dataSource = self.dataSource;
+    [self.view addSubview:self.tableView];
     
     
 }
